@@ -34,7 +34,7 @@
 # Module 2: Python
 ## Module 2 Lecture Notes
 
-###Collections:
+### Collections:
 ```
 from collections import defaultdict
 d = defaultdict(str)
@@ -48,7 +48,7 @@ d['dog'] #return 10
 ```
 
 
-###Args & Kwargs:
+### Args & Kwargs:
 ```
 def print_everything(*args):
     # args is a tuple of arguments passed to the fn
@@ -63,7 +63,7 @@ def print_keyword_args(**kwargs):
 print_keyword_args(first_name="John", last_name="Doe")
 ```
 
-###Inheritence:
+### Inheritence:
 ```
 class A(object):
     def foo(self):
@@ -83,7 +83,7 @@ class C(A, B):
 * the function uses the same default object, initialized on execution
 
 
-###Iterators:
+### Iterators:
 * defines __next__, and __iter__ functions
 * use memory more efficiently (loads one at a time)
 ```
@@ -101,10 +101,10 @@ class Reverse:
         return self
 ```
 
-###Generators:
+### Generators:
 * use yield, can call next(iter)
 
-###Misc:
+### Misc:
 * dictionary keys are immutable, d.items() gives tuples
 * 
 
@@ -118,7 +118,7 @@ class Reverse:
 
 # Module 3: Search Problems
 ## Module 3 Lecture Notes
-###Search Problem:
+### Search Problem:
 * Formulation: 
     * States (and initial state)
     * Actions (set A)
@@ -126,7 +126,7 @@ class Reverse:
     * Performance Measure / Path Cost (must be additive)
     * Goal test - can be implicit (i.e. checkmate)
 
-###Time  / Space Complexity:
+### Time  / Space Complexity:
 * b = maximum branching factor of search tree
 * d = depth of shallowest goal node
 * m = maximum length of any path in state space (potentially infinity)
@@ -185,7 +185,7 @@ def dfs():
 * Space Complexity --> $O(b * d)$
 
 
-###Summary:
+### Summary:
 | Criterion | BreadthFirst | DepthFirst | Depthlimited | Iterative-deepening |
 | ----- | ----- | ----- | ----- | ----- |
 | **Complete?** | YES | NO | NO | YES | 
@@ -213,13 +213,13 @@ def dfs():
 
 # Module 4: Informed Search
 ## Module 4 Lecture Notes
-###Uniform Cost Search(UCS): uses g(n)
+### Uniform Cost Search(UCS): uses g(n)
 * all moves equal in cost, g(N) = depth(N) in tree
 * expand node (remove and use node) with lowest path cost
 * priority queue ordered by path cost
 * diff w/ bfs: tests if node is goal state when selected, not when added to frontier
 
-###Greedy Best-first Search: uses h(n)
+### Greedy Best-first Search: uses h(n)
 * select node for expansion that is estimated to be closest to goal
 * f(n) *includes* h(n) heuristic distance to goal
 * sorted by priority queue, f(n) replaces g(n) and g(n) ignored
@@ -240,7 +240,7 @@ def greedy_best_first():
                 came_from[neighbor] = node
 ```
 
-###A Star Search: uses g(n) + h(n)
+### A Star Search: uses g(n) + h(n)
 * f(n) = g(n) + h(n); total cost = depth/actual cost so far + estimated heuristic
 * implemented with priority queue
 * uses an admissable heuristic
@@ -265,11 +265,11 @@ def a_star(): # O(b * d) time, where b is branching factor and d = depth/distanc
                 came_from[neighbor] = node
 ```
 
-###Dominance: metric on better heuristics
+### Dominance: metric on better heuristics
 * $h_2(n) \geq h_1(n) \implies h_2$ dominates $h_1$
 * $h_2$ is optimistic but more accurate than $h_1 \implies h_2$ is better 
 
-###Admissible Heuristics:
+### Admissible Heuristics:
 * $h(n)$ is admissible $\iff 0 \leq h(n) \leq h^*(n)$, where $h^*(n)$ is true cost to goal
 
 
