@@ -190,8 +190,8 @@ def dfs():
 | ----- | ----- | ----- | ----- | ----- |
 | **Complete?** | YES | NO | NO | YES | 
 | **Optimal?** | YES | NO | NO | YES |
-| **Time** | bd | bm | bl | bd | 
-| **Space** | bd | bm | bl | bd | 
+| **Time** | $b^d$ | $b^m$ | $b^l$ | $b^d$ | 
+| **Space** | $b^d$ | $b^m$ | $b \cdot l$ | $d$ | 
 
 * b = maximum branching factor of search tree
 * d = depth of shallowest goal node
